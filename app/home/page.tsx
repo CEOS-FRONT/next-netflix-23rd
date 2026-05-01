@@ -48,7 +48,7 @@ export default async function HomePage() {
         <MovieRow title="My List" medias={topRated.results} />
         <MovieRow title="African Movies" medias={african.results} />
         <MovieRow title="Nollywood Movies & TV" medias={african.results} />
-        <MovieRow title="Netflix Originals" medias={netflixOriginals.results} />
+        <MovieRow title="Netflix Originals" medias={netflixOriginals.results} large />
         <MovieRow title="Watch it Again" medias={popular.results} />
         <MovieRow title="New Releases" medias={nowPlaying.results} />
         <MovieRow title="TV Thrillers & Mysteries" medias={tvThrillers.results} />

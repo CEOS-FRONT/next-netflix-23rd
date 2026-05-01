@@ -4,22 +4,28 @@ import type { Media } from "@/types/media";
 
 type MovieCardProps = {
   media?: Media;
+  large?: boolean;
 };
 
-export default function MovieCard({ media }: MovieCardProps) {
+export default function MovieCard({ media, large }: MovieCardProps) {
+  const sizeClass = large
+    ? "w-[154.04px] h-[251px]"
+    : "w-[103px] h-[161px]";
+
   if (!media?.poster_path) {
-    return <div className="w-[103px] h-[161px] rounded-[2px] bg-white shrink-0" />;
+    return <div className={`${sizeClass} rounded-[2px] bg-white shrink-0`} />;
   }
 
   const title = media.title ?? media.name ?? "";
+  const imageSize = large ? "w342" : "w185";
 
   return (
-    <div className="w-[103px] h-[161px] rounded-[2px] overflow-hidden shrink-0 relative">
+    <div className={`${sizeClass} rounded-[2px] overflow-hidden shrink-0 relative`}>
       <Image
-        src={getPosterUrl(media.poster_path)}
+        src={getPosterUrl(media.poster_path, imageSize)}
         alt={title}
         fill
-        sizes="103px"
+        sizes={large ? "154px" : "103px"}
         className="object-cover"
       />
     </div>
