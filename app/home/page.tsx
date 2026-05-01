@@ -3,7 +3,7 @@ import MovieRow from "@/components/MovieRow";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="pb-20">
       {/* 페어 영역: Hero, Previews, Continue Watching */}
 
       {/* 내 영역: Movie Rows */}
