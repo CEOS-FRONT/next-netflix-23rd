@@ -1,6 +1,10 @@
 import type { TMDBListResponse } from "@/types/media";
 
 const BASE_URL = "https://api.themoviedb.org/3";
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
+
+export const getPosterUrl = (path: string, size = "w185") =>
+  `${IMAGE_BASE_URL}/${size}${path}`;
 
 async function tmdbFetch(endpoint: string): Promise<TMDBListResponse> {
   const res = await fetch(`${BASE_URL}${endpoint}`, {
