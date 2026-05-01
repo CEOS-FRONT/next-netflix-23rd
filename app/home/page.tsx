@@ -43,7 +43,7 @@ export default async function HomePage() {
       <div className="flex flex-col gap-6">
         <MovieRow title="Popular on Netflix" medias={popular.results} />
         <MovieRow title="Trending Now" medias={trending.results} />
-        <MovieRow title="Top 10 in Nigeria Today" medias={trendingDay.results} />
+        <MovieRow title="Top 10 in Nigeria Today" medias={trendingDay.results.slice(0, 10)} />
         <MovieRow title="My List" medias={topRated.results} />
         <MovieRow title="African Movies" medias={african.results} />
         <MovieRow title="Nollywood Movies & TV" medias={african.results} />
