@@ -41,6 +41,7 @@ export default async function HomePage() {
 
       {/* 내 영역: Movie Rows */}
       <div className="flex flex-col gap-6">
+        <MovieRow title="Continue Watching for Emenalo" medias={popular.results} />
         <MovieRow title="Popular on Netflix" medias={popular.results} />
         <MovieRow title="Trending Now" medias={trending.results} />
         <MovieRow title="Top 10 in Nigeria Today" medias={trendingDay.results.slice(0, 10)} />
