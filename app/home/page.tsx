@@ -10,9 +10,12 @@ export default function HomePage() {
     <main>
       <HomeHeader />
       <HeroBanner />
-      <BannerButtons />
+      <div className="items-center justify-center">
+        <BannerButtons />
+      </div>
       <Previews />
       <ContinueWatching />
+      <div className="h-14" />
       <BottomNav />
     </main>
   );
