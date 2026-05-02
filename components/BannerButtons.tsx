@@ -14,7 +14,7 @@ export default function BannerButtons() {
           width={18}
           height={16}
         />
-        <span className="text-label1 text-black">Play</span>
+        <span className="text-label1 text-black antialiased">Play</span>
       </button>
       <div className="flex flex-col items-center gap-0.5">
         <Image

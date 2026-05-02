@@ -1,5 +1,6 @@
 import BannerButtons from "@/components/BannerButtons";
 import BottomNav from "@/components/BottomNav";
+import ContinueWatching from "@/components/ContinueWatching";
 import HeroBanner from "@/components/HeroBanner";
 import HomeHeader from "@/components/HomeHeader";
 import MovieRow from "@/components/MovieRow";
@@ -46,8 +47,8 @@ export default async function HomePage() {
       <HeroBanner medias={koreaTop.results.slice(0, 10)} />
       <BannerButtons />
       <Previews medias={trending.results.slice(0, 10)} />
+      <ContinueWatching />
 
-      {/* 내 영역: Movie Rows */}
       <div className="flex flex-col gap-6">
         <MovieRow title="Continue Watching for Emenalo" medias={popular.results} />
         <MovieRow title="Popular on Netflix" medias={popular.results} />

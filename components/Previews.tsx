@@ -10,7 +10,7 @@ type PreviewsProps = {
 export default function Previews({ medias = [] }: PreviewsProps) {
   return (
     <section className="px-4 py-3">
-      <h2 className="text-heading2 text-white mb-3">Previews</h2>
+      <h2 className="text-heading2 text-white mb-3 antialiased">Previews</h2>
       <div className="flex gap-x-3 overflow-x-auto scrollbar-hide">
         {medias.map((media) => (
           <Link key={media.id} href={`/detail/${media.id}`} className="shrink-0">
