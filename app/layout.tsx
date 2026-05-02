@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white">
-        <div className="mx-auto w-93.75 min-h-screen bg-black">{children}</div>
+        <div className="relative mx-auto w-93.75 min-h-screen bg-black">{children}</div>
       </body>
     </html>
   );
