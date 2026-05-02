@@ -6,11 +6,11 @@ import MovieRow from "@/components/MovieRow";
 import Previews from "@/components/Previews";
 import {
   fetchAfricanMovies,
+  fetchKoreaTopMovies,
   fetchNetflixOriginals,
   fetchNowPlaying,
   fetchPopular,
   fetchTopRated,
-  fetchTrendingDay,
   fetchTrendingWeek,
   fetchTVThrillers,
   fetchUSTVShows,
@@ -20,7 +20,7 @@ export default async function HomePage() {
   const [
     popular,
     trending,
-    trendingDay,
+    koreaTop,
     topRated,
     african,
     netflixOriginals,
@@ -30,7 +30,7 @@ export default async function HomePage() {
   ] = await Promise.all([
     fetchPopular(),
     fetchTrendingWeek(),
-    fetchTrendingDay(),
+    fetchKoreaTopMovies(),
     fetchTopRated(),
     fetchAfricanMovies(),
     fetchNetflixOriginals(),
@@ -43,7 +43,7 @@ export default async function HomePage() {
     <main className="pb-20">
       {/* 페어 영역 */}
       <HomeHeader />
-      <HeroBanner />
+      <HeroBanner media={koreaTop.results[0]} />
       <BannerButtons />
       <Previews />
 
@@ -52,7 +52,7 @@ export default async function HomePage() {
         <MovieRow title="Continue Watching for Emenalo" medias={popular.results} />
         <MovieRow title="Popular on Netflix" medias={popular.results} />
         <MovieRow title="Trending Now" medias={trending.results} />
-        <MovieRow title="Top 10 in Nigeria Today" medias={trendingDay.results.slice(0, 10)} />
+        <MovieRow title="Top 10 in Korea Today" medias={koreaTop.results.slice(0, 10)} />
         <MovieRow title="My List" medias={topRated.results} />
         <MovieRow title="African Movies" medias={african.results} />
         <MovieRow title="Nollywood Movies & TV" medias={african.results} />
