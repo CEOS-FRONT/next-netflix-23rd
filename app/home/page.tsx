@@ -45,7 +45,7 @@ export default async function HomePage() {
       <HomeHeader />
       <HeroBanner media={koreaTop.results[0]} />
       <BannerButtons />
-      <Previews />
+      <Previews medias={trending.results.slice(0, 10)} />
 
       {/* 내 영역: Movie Rows */}
       <div className="flex flex-col gap-6">
