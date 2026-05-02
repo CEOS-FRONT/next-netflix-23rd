@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function BannerButtons() {
   return (
-    <div className="h-11 w-64.5 flex flex-rol gap-11 bg-none">
-      <div className="flex flex-col gap-0.5">
-        <Image src="/icons/icon-plus.svg" alt="플러스" width={24} height={24} />
+    <div className="mx-auto mt-[14px] flex w-[258px] h-[44px] items-center justify-center gap-11">
+      <div className="flex flex-col items-center gap-0.5">
+        <Image src="/icons/icon-plus.svg" alt="My List" width={24} height={24} />
         <span className="text-white text-caption1">My List</span>
       </div>
-      <button className="flex flex-rol gap-3 bg-Grey-5">
+      <button className="flex items-center justify-center gap-3 bg-Grey-5 px-6 py-2 rounded">
         <Image
           src="/icons/icon-play-filled.svg"
           alt="재생"
@@ -16,7 +16,7 @@ export default function BannerButtons() {
         />
         <span className="text-label1 text-black">Play</span>
       </button>
-      <div className="flex flex-col gap-0.5">
+      <div className="flex flex-col items-center gap-0.5">
         <Image
           src="/icons/icon-info-circle.svg"
           alt="정보"
