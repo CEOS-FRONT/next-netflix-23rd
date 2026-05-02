@@ -43,7 +43,7 @@ export default async function HomePage() {
     <main className="pb-20">
       {/* 페어 영역 */}
       <HomeHeader />
-      <HeroBanner media={koreaTop.results[0]} />
+      <HeroBanner medias={koreaTop.results.slice(0, 10)} />
       <BannerButtons />
       <Previews medias={trending.results.slice(0, 10)} />
 
