@@ -1,5 +1,9 @@
+import BannerButtons from "@/components/BannerButtons";
 import BottomNav from "@/components/BottomNav";
+import HeroBanner from "@/components/HeroBanner";
+import HomeHeader from "@/components/HomeHeader";
 import MovieRow from "@/components/MovieRow";
+import Previews from "@/components/Previews";
 import {
   fetchAfricanMovies,
   fetchNetflixOriginals,
@@ -37,7 +41,11 @@ export default async function HomePage() {
 
   return (
     <main className="pb-20">
-      {/* 페어 영역: Hero, Previews, Continue Watching */}
+      {/* 페어 영역 */}
+      <HomeHeader />
+      <HeroBanner />
+      <BannerButtons />
+      <Previews />
 
       {/* 내 영역: Movie Rows */}
       <div className="flex flex-col gap-6">
