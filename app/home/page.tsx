@@ -47,10 +47,9 @@ export default async function HomePage() {
       <HeroBanner medias={koreaTop.results.slice(0, 10)} />
       <BannerButtons />
       <Previews medias={trending.results.slice(0, 10)} />
-      <ContinueWatching />
+      <ContinueWatching medias={popular.results.slice(0, 10)} />
 
       <div className="flex flex-col gap-6">
-        <MovieRow title="Continue Watching for Emenalo" medias={popular.results} />
         <MovieRow title="Popular on Netflix" medias={popular.results} />
         <MovieRow title="Trending Now" medias={trending.results} />
         <MovieRow title="Top 10 in Korea Today" medias={koreaTop.results.slice(0, 10)} />
