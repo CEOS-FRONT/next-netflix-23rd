@@ -10,9 +10,9 @@ export default function HomeHeader() {
         height={56}
       />
       <nav className="flex flex-1 items-center justify-between ml-4">
-        <span className="text-white text-body1">TV Shows</span>
-        <span className="text-white text-body1">Movies</span>
-        <span className="text-white text-doby1">My List</span>
+        <span className="text-white text-body1 antialiased">TV Shows</span>
+        <span className="text-white text-body1 antialiased">Movies</span>
+        <span className="text-white text-doby1 antialiased">My List</span>
       </nav>
     </header>
   );

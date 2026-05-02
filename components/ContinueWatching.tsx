@@ -15,7 +15,7 @@ const MOCK_MOVIES: Movie[] = [
 export default function ContinueWatching() {
   return (
     <section className="px-4 py-3">
-      <h2 className="text-heading2 text-white mb-3">
+      <h2 className="text-heading2 text-white mb-3 antialiased">
         Continue Watching for Girim Nam
       </h2>
       <div className="flex gap-x-3 overflow-x-auto scrollbar-hide">
