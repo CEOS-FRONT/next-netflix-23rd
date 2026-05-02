@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HomeHeader() {
   return (
-    <header className="absolute top-6 left-4 right-[25.1px] h-[57px] flex items-center justify-center gap-[24.666px] z-10">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 w-93.75 h-[57px] flex items-center justify-center gap-[24.666px] pl-4 pr-[25.1px] z-10">
       <Image
         src="/icons/icon-Netflix.svg"
         alt="Netflix"
