@@ -2,18 +2,16 @@ import Image from "next/image";
 
 export default function HomeHeader() {
   return (
-    <header className="fixed top-6 w-93.75 flex items-center justify-between pl-4 pr-6">
+    <header className="absolute top-6 left-4 right-[25.1px] h-[57px] flex items-center justify-center gap-[24.666px] z-10">
       <Image
         src="/icons/icon-Netflix.svg"
         alt="Netflix"
         width={56}
-        height={56}
+        height={57}
       />
-      <nav className="flex flex-1 items-center justify-between ml-4">
-        <span className="text-white text-body1">TV Shows</span>
-        <span className="text-white text-body1">Movies</span>
-        <span className="text-white text-doby1">My List</span>
-      </nav>
+      <span className="text-white text-body1 text-center shrink-0 w-[84.464px]">TV Shows</span>
+      <span className="text-white text-body1 text-center shrink-0 w-[59.873px]">Movies</span>
+      <span className="text-white text-body1 text-center shrink-0 w-[60.942px]">My List</span>
     </header>
   );
 }
