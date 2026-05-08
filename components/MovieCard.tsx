@@ -19,7 +19,7 @@ export default function MovieCard({ media, large }: MovieCardProps) {
 
   const title = media.title ?? media.name ?? "";
   const imageSize = large ? "w342" : "w185";
-  const mediaType = media.name ? "tv" : "movie";
+  const mediaType = media.media_type === "tv" ? "tv" : "movie";
 
   return (
     <Link href={`/detail/${media.id}?type=${mediaType}`}>

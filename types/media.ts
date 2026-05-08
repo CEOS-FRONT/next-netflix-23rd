@@ -3,6 +3,7 @@ export type Media = {
   title?: string;
   name?: string;
   poster_path: string | null;
+  media_type?: "movie" | "tv" | "person";
 };
 
 export type TMDBListResponse = {
