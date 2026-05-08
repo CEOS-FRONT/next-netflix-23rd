@@ -11,3 +11,13 @@ export type TMDBListResponse = {
   total_pages: number;
   total_results: number;
 };
+
+export type MediaDetail = {
+  id: number;
+  title?: string;
+  name?: string;
+  overview: string;
+  backdrop_path: string | null;
+  poster_path: string | null;
+  media_type?: string;
+};
