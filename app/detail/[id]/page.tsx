@@ -1,3 +1,4 @@
+import BackButton from "@/components/BackButton";
 import DetailHeroImage from "@/components/DetailHeroImage";
 import DetailInfo from "@/components/DetailInfo";
 import PlayButton from "@/components/PlayButton";
@@ -17,8 +18,11 @@ export default async function DetailPage({ params, searchParams }: Props) {
   const title = media.title ?? media.name ?? "";
 
   return (
-    <main className="bg-black min-h-screen">
-      <DetailHeroImage media={media} />
+    <main className="bg-black min-h-screen pb-20">
+      <div className="relative">
+        <DetailHeroImage media={media} />
+        <BackButton />
+      </div>
       <PlayButton />
       <DetailInfo title={title} overview={media.overview} />
     </main>
