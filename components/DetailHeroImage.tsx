@@ -22,7 +22,12 @@ export default function DetailHeroImage({ media }: DetailHeroImageProps) {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
+      <div 
+        className="absolute inset-0" 
+        style={{
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%)'
+        }}
+      />
     </div>
   );
 }
