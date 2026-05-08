@@ -21,23 +21,34 @@ export default function HeroBanner({ medias = [] }: HeroBannerProps) {
     return () => clearInterval(interval);
   }, [medias.length]);
 
-  const media = medias[currentIndex];
-  if (!media) return <div className="relative h-103.75 w-full bg-zinc-800" />;
-
-  const title = media.title ?? media.name ?? "";
+  if (medias.length === 0) return <div className="relative h-103.75 w-full bg-zinc-800" />;
 
   return (
-    <div className="relative h-103.75 w-full bg-zinc-800">
-      {media.poster_path && (
-        <Image
-          src={getPosterUrl(media.poster_path, "w780")}
-          alt={title}
-          fill
-          sizes="375px"
-          className="object-cover"
-          priority
-        />
-      )}
+    <div className="relative h-103.75 w-full bg-zinc-800 overflow-hidden">
+      {medias.map((media, index) => {
+        const title = media.title ?? media.name ?? "";
+        const isActive = index === currentIndex;
+
+        return (
+          <div
+            key={media.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              isActive ? "opacity-100 z-0" : "opacity-0 -z-10"
+            }`}
+          >
+            {media.poster_path && (
+              <Image
+                src={getPosterUrl(media.poster_path, "w780")}
+                alt={title}
+                fill
+                sizes="375px"
+                className="object-cover"
+                priority={index === 0}
+              />
+            )}
+          </div>
+        );
+      })}
       {/* 피그마 스펙 그라데이션 오버레이 */}
       <div 
         className="absolute inset-0 z-0" 
