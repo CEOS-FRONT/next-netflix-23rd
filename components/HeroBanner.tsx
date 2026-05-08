@@ -38,6 +38,13 @@ export default function HeroBanner({ medias = [] }: HeroBannerProps) {
           priority
         />
       )}
+      {/* 피그마 스펙 그라데이션 오버레이 */}
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{
+          background: "linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 50%, #000 100%)"
+        }}
+      />
       <Top10Icon 
         width={15} 
         height={15} 
