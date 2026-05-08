@@ -19,7 +19,11 @@ export default function MovieCard({ media, large }: MovieCardProps) {
 
   const title = media.title ?? media.name ?? "";
   const imageSize = large ? "w342" : "w185";
-  const mediaType = media.media_type === "tv" ? "tv" : "movie";
+  
+  // media_type이 명시되어 있으면 그걸 쓰고, 없으면 name(TV) 속성 유무로 판별
+  const mediaType = media.media_type 
+    ? (media.media_type === "tv" ? "tv" : "movie")
+    : (media.name ? "tv" : "movie");
 
   return (
     <Link href={`/detail/${media.id}?type=${mediaType}`}>
