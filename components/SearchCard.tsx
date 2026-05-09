@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getPosterUrl } from "@/lib/tmdb";
 import type { Media } from "@/types/media";
 
@@ -26,9 +27,10 @@ export default function SearchCard({ media, skeleton }: SearchCardProps) {
   }
 
   const title = media.title ?? media.name ?? "";
+  const type = media.media_type === "tv" ? "tv" : "movie";
 
   return (
-    <div className="flex flex-row h-19">
+    <Link href={`/detail/${media.id}?type=${type}`} className="flex flex-row h-19">
       <div className="relative w-36.5 h-19 shrink-0 overflow-hidden">
         <Image
           src={getPosterUrl(media.poster_path)}
@@ -47,6 +49,6 @@ export default function SearchCard({ media, skeleton }: SearchCardProps) {
           height={24}
         />
       </div>
-    </div>
+    </Link>
   );
 }
