@@ -30,7 +30,9 @@ export const fetchNowPlaying = () => tmdbFetch("/movie/now_playing");
 export const fetchTrendingWeek = () => tmdbFetch("/trending/all/week");
 export const fetchTrendingDay = () => tmdbFetch("/trending/all/day");
 export const fetchKoreaTopMovies = () =>
-  tmdbFetch("/discover/movie?watch_region=KR&with_watch_providers=8&sort_by=popularity.desc");
+  tmdbFetch(
+    "/discover/movie?watch_region=KR&with_watch_providers=8&sort_by=popularity.desc",
+  );
 
 // TV 시리즈
 export const fetchNetflixOriginals = () =>
@@ -43,3 +45,17 @@ export const fetchUSTVShows = () =>
 // 지역
 export const fetchAfricanMovies = () =>
   tmdbFetch("/discover/movie?with_origin_country=NG");
+
+// 검색
+export async function searchTMDB(query: string): Promise<TMDBListResponse> {
+  const res = await fetch(
+    `${BASE_URL}/search/multi?query=${encodeURIComponent(query)}&language=ko-KR`,
+    {
+      ///include_adult=false&language=en-US&page=1', options)
+      headers: { Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}` },
+      cache: "no-store",
+    },
+  );
+  if (!res.ok) throw new Error(`TMDB API error: ${res.status}`);
+  return res.json();
+}

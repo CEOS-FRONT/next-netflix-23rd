@@ -29,7 +29,7 @@ export default function SearchHeader({ onResults }: SearchHeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-10 flex flex-row items-center h-13 bg-Grey-800 mt-11 px-4 gap-3">
+    <header className="fixed top-11 z-10 w-93.75 flex flex-row items-center h-13 bg-Grey-800 px-4 gap-3">
       <Image
         src="/icons/icon-search-header.svg"
         alt="돋보기"

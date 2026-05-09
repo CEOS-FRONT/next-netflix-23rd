@@ -8,14 +8,14 @@ type SearchCardProps = {
   skeleton?: boolean;
 };
 
-export default function SearchCard({ media, large, skeleton }: SearchCardProps) {
+export default function SearchCard({ media, skeleton }: SearchCardProps) {
   if (skeleton) {
     return (
-      <div className="flex flex-row h-19">
-        <div className="w-36.5 h-19 shrink-0 bg-zinc-700 animate-pulse" />
+      <div className="flex flex-row h-19 skeleton-item">
+        <div className="w-36.5 h-19 shrink-0 bg-zinc-700" />
         <div className="flex flex-1 flex-row items-center justify-between bg-Grey-800 px-4">
-          <div className="h-4 w-32 bg-zinc-700 rounded animate-pulse" />
-          <div className="w-6 h-6 bg-zinc-700 rounded-full animate-pulse" />
+          <div className="h-4 w-32 bg-zinc-700 rounded" />
+          <div className="w-6 h-6 bg-zinc-700 rounded-full" />
         </div>
       </div>
     );
