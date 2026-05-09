@@ -28,7 +28,7 @@ export const fetchNowPlaying = () => tmdbFetch("/movie/now_playing");
 
 // 트렌딩
 export const fetchTrendingWeek = () => tmdbFetch("/trending/all/week");
-export const fetchTrendingDay = () => tmdbFetch("/trending/all/day");
+export const fetchTrendingDay = (page = 1) => tmdbFetch(`/trending/all/day?page=${page}`);
 export const fetchKoreaTopMovies = () =>
   tmdbFetch(
     "/discover/movie?watch_region=KR&with_watch_providers=8&sort_by=popularity.desc",
